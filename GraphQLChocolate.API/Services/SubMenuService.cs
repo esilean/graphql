@@ -1,8 +1,7 @@
 ﻿using GraphQLChocolate.API.Data;
 using GraphQLChocolate.API.Models;
 using GraphQLChocolate.API.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,7 +29,7 @@ namespace GraphQLChocolate.API.Services
             return _ctx.SubMenus.AsQueryable();
         }
 
-        public IQueryable<SubMenu> GetAll(int menuId)
+        public IQueryable<SubMenu> GetAll(Guid menuId)
         {
             return _ctx.SubMenus.Where(x => x.MenuId == menuId).AsQueryable();
         }

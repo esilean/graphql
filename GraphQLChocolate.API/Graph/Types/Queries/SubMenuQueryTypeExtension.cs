@@ -11,7 +11,8 @@ namespace GraphQLChocolate.API.Graph.Types.Queries
 
             descriptor.Field("SubMenus")
                         .ResolveWith<SubMenuQuery>(_ => _.SubMenus())
-                        .Name("submenus");
+                        .Name("submenus")
+                        .Authorize("user-policy");
         }
     }
 }

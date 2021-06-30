@@ -12,6 +12,7 @@ namespace GraphQLChocolate.API.Graph.Types.Queries
             descriptor.Field("Menus")
                         .ResolveWith<MenuQuery>(_ => _.Menus())
                         .Name("menus")
+                        .Authorize(new[] { "user", "admin" })
                         .UsePaging()
                         .UseProjection()
                         .UseFiltering()

@@ -1,0 +1,7 @@
+﻿namespace GraphQLChocolate.API.Models.Auth
+{
+    public class AuthToken
+    {
+        public string Token { get; set; }
+    }
+}

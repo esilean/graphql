@@ -1,8 +1,10 @@
-﻿namespace GraphQLChocolate.API.Models
+﻿using System;
+
+namespace GraphQLChocolate.API.Models
 {
     public class Reservation
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
         public int TotalPeople { get; set; }

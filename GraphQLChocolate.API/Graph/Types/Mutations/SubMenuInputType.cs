@@ -31,7 +31,7 @@ namespace GraphQLChocolate.API.Graph.Types.Queries
                         .Name("price");
 
             descriptor.Field(_ => _.MenuId)
-                        .Type<IntType>()
+                        .Type<StringType>()
                         .Name("menuId");
         }
     }

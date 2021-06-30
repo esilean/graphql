@@ -1,5 +1,6 @@
 ﻿using GraphQLChocolate.API.Models;
 using GraphQLChocolate.API.Services.Interfaces;
+using System;
 using System.Linq;
 
 namespace GraphQLChocolate.API.Graph.Queries
@@ -15,7 +16,7 @@ namespace GraphQLChocolate.API.Graph.Queries
 
         public IQueryable<SubMenu> SubMenus() => _subMenuService.GetAll();
 
-        public IQueryable<SubMenu> SubMenus(int menuId) => _subMenuService.GetAll(menuId);
+        public IQueryable<SubMenu> SubMenus(Guid menuId) => _subMenuService.GetAll(menuId);
 
     }
 }

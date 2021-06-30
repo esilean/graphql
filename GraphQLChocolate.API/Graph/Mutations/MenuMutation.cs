@@ -1,5 +1,6 @@
 ﻿using GraphQLChocolate.API.Models;
 using GraphQLChocolate.API.Services.Interfaces;
+using HotChocolate.Execution;
 using HotChocolate.Subscriptions;
 using System.Threading.Tasks;
 
@@ -19,6 +20,8 @@ namespace GraphQLChocolate.API.Graph.Mutations
 
         public async Task<Menu> CreateMenu(Menu menu)
         {
+            if (string.IsNullOrWhiteSpace(menu.Name))
+                throw new QueryException("Name cannot be null or empty.");
 
             var created = await _menuService.Add(menu);
 
