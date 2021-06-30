@@ -11,7 +11,11 @@ namespace GraphQLChocolate.API.Graph.Types.Queries
 
             descriptor.Field("Menus")
                         .ResolveWith<MenuQuery>(_ => _.Menus())
-                        .Name("menus");
+                        .Name("menus")
+                        .UsePaging()
+                        .UseProjection()
+                        .UseFiltering()
+                        .UseSorting();
         }
     }
 }

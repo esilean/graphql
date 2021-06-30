@@ -46,12 +46,14 @@ namespace GraphQLChocolate.API
 
             services.AddScoped<SubMenuQuery>();
             services.AddScoped<SubMenuMutation>();
-            services.AddScoped<SubMenuSubscription>();
 
             services.AddScoped<ReservationQuery>();
             services.AddScoped<ReservationMutation>();
 
             services.AddGraphQLServer()
+                    .AddFiltering()
+                    .AddSorting()
+                    .AddProjections()
                     .AddQueryType(q => q.Name("Query"))
                     .AddType<MenuQueryTypeExtension>()
                     .AddType<SubMenuQueryTypeExtension>()
